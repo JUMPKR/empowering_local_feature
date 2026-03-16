@@ -31,7 +31,16 @@
 
         /* 영상 영역: 링크드인 임베드 최적화 */
         .video-highlight { text-align: center; margin-bottom: 50px; }
-        .video-container { display: inline-block; width: 100%; max-width: 504px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); border-radius: 12px; overflow: hidden; background: #000; }
+        .video-wrapper { 
+            display: inline-block; 
+            max-width: 504px; 
+            width: 100%; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            line-height: 0; /* 하단 여백 제거 */
+        }
+        iframe { border: none; max-width: 100%; }
 
         .content-card { background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 35px; }
 
@@ -39,7 +48,7 @@
         .process-flow { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-top: 30px; position: relative; }
         .process-step { flex: 1; background: var(--step-bg); border: 2px solid #e1e8ed; padding: 25px 15px; border-radius: 15px; text-align: center; position: relative; z-index: 2; transition: 0.3s; }
         .process-step:hover { border-color: var(--jump-sky); transform: translateY(-5px); }
-        .step-icon { width: 50px; height: 50px; background: var(--jump-sky); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; font-size: 1.2rem; }
+        .step-icon { width: 45px; height: 45px; background: var(--jump-sky); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; }
         .process-step h4 { color: var(--ms-blue); font-size: 1.1rem; margin-bottom: 10px; }
         .process-step p { font-size: 0.9rem; line-height: 1.5; color: #666; }
         
@@ -50,7 +59,7 @@
 
         /* 점프 소개 (로고 축소) */
         .jump-section { background: var(--bg-light); border-radius: 40px; padding: 50px 8%; display: flex; align-items: center; gap: 40px; }
-        .jump-section img { height: 35px; width: auto; }
+        .jump-section img { height: 35px; width: auto; } /* 축소된 로고 크기 */
         .jump-text h3 { color: var(--jump-sky); font-size: 1.8rem; margin-top: 0; }
 
         /* MS 캠페인 소개 */
@@ -59,13 +68,14 @@
         .ms-campaign-text { font-size: 1.05rem; line-height: 1.85; color: #444; }
 
         .footer-action { text-align: center; padding: 80px 0; }
-        .btn-final { background: var(--ms-blue); color: white; text-decoration: none; padding: 22px 85px; font-size: 1.6rem; font-weight: bold; border-radius: 60px; transition: 0.3s; display: inline-block; box-shadow: 0 12px 25px rgba(0,120,212,0.3); }
+        .btn-final { background: var(--ms-blue); color: white; text-decoration: none; padding: 20px 80px; font-size: 1.5rem; font-weight: bold; border-radius: 60px; transition: 0.3s; display: inline-block; box-shadow: 0 10px 20px rgba(0,120,212,0.2); }
 
         footer { background: #1a1a1a; color: #777; padding: 40px 8%; text-align: center; border-top: 5px solid var(--ms-blue); }
 
         @media (max-width: 1024px) { 
             .process-flow, .level-grid, .ms-campaign-box, .jump-section { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
             .ms-campaign-box { align-items: center; }
+            header { padding: 10px 4%; }
             .logos .ms-logo { height: 70px; }
         }
     </style>
@@ -93,36 +103,35 @@
     </div>
 
     <div class="video-highlight">
-        <div class="video-container">
+        <div class="video-wrapper">
             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7414537653037219840?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="활동 영상"></iframe>
         </div>
     </div>
 
     <div class="content-card">
         <h3 style="border-left: 6px solid var(--jump-sky); padding-left: 15px; margin-bottom: 10px;">추진 내용 및 진행 과정</h3>
-        <p style="margin-bottom: 40px;">교육 기획부터 성과 분석까지 체계적인 4단계 프로세스로 운영됩니다.</p>
-        
+        <p style="margin-bottom: 40px; color: #666;">체계적인 4단계 프로세스를 통해 전국 학교 현장에 최적화된 교육을 제공합니다.</p>
         
         <div class="process-flow">
             <div class="process-step">
                 <div class="step-icon">01</div>
                 <h4>기획 및 모집</h4>
-                <p>지역 교육청 파트너십 기반<br>참여 학교 선정 및 공고</p>
+                <p>지역 교육청과 협력하여<br>대상 학교 선정 및 공고</p>
             </div>
             <div class="process-step">
                 <div class="step-icon">02</div>
                 <h4>멘토단 양성</h4>
-                <p>대학생 퍼실리테이터 선발 및<br>MS AI 커리큘럼 집중 교육</p>
+                <p>대학생 퍼실리테이터 선발 및<br>AI 교수법 전문 교육 실시</p>
             </div>
             <div class="process-step">
                 <div class="step-icon">03</div>
                 <h4>현장 교육 시행</h4>
-                <p>학교 방문 체험형 캠프 및<br>MS 임직원 진로 멘토링</p>
+                <p>학교 방문 체험형 캠프 및<br>MS 임직원 진로 특강</p>
             </div>
             <div class="process-step">
                 <div class="step-icon">04</div>
                 <h4>성과 공유</h4>
-                <p>공식 수료증 발급 및<br>참여자 만족도 데이터 분석</p>
+                <p>공식 수료증 발급 및<br>교육 만족도 조사 환류</p>
             </div>
         </div>
     </div>
@@ -163,10 +172,10 @@
     <div class="ms-campaign-box">
         <img src="Microsoft-logo_rgb_c-gray.png" alt="MS Logo">
         <div class="ms-campaign-text">
-            <p>마이크로소프트의 <strong>'Empowering Local Futures'</strong>는 전 세계 모든 지역 사회가 AI 시대를 주도할 수 있도록 기술 평등을 실현하는 글로벌 비전입니다.</p>
-            <p>지리적·경제적 여건에 상관없이 모든 청소년이 최신 기술에 접근하고 배울 수 있도록 교육 기회를 확대하는 것을 핵심 가치로 삼고 있습니다.</p>
+            <p>마이크로소프트의 <strong>'Empowering Local Futures'</strong>는 전 세계 모든 지역 사회가 AI 시대를 주도할 수 있도록 기술 평등을 실현하는 글로벌 사회공헌 비전입니다.</p>
+            <p>지리적·경제적 여건에 상관없이 모든 청소년이 최신 IT 기술에 접근하고 배울 수 있도록 교육 기회를 확대하는 것을 핵심 가치로 삼고 있습니다.</p>
             <p>한국에서는 'Hour of AI' 프로그램을 통해 학생들에게 실질적인 AI 리터러시 경험을 제공하며 미래 인재로 성장하도록 지원합니다.</p>
-            <p>이는 단순한 기술 전수를 넘어 지역 사회의 지속 가능한 혁신과 성장을 견인하고자 하는 마이크로소프트의 사회공헌 약속입니다.</p>
+            <p>이는 단순한 기술 전수를 넘어 지역 사회의 지속 가능한 혁신과 성장을 견인하고자 하는 마이크로소프트의 약속입니다.</p>
         </div>
     </div>
 </section>
