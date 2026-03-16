@@ -15,16 +15,19 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', 'Pretendard', sans-serif; margin: 0; color: var(--ms-dark); line-height: 1.7; word-break: keep-all; }
         
+        /* 헤더 & 네비게이션 */
         header { display: flex; justify-content: space-between; align-items: center; padding: 10px 8%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logos { display: flex; align-items: center; gap: 20px; }
         .logos .jump-logo { height: 35px; width: auto; } 
         .logos .ms-logo { height: 100px; width: auto; }
         .logos span { color: #eee; font-size: 2.5rem; font-weight: 100; }
         
+        nav { display: flex; align-items: center; }
         nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 600; font-size: 1rem; transition: 0.3s; }
         nav a:hover { color: var(--jump-sky); }
         .btn-query-nav { background: var(--ms-blue); color: white !important; padding: 10px 20px; border-radius: 4px; }
 
+        /* 섹션 공통 스타일 */
         section { padding: 80px 8%; }
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { color: var(--jump-sky); font-size: 2.5rem; margin-bottom: 25px; font-weight: 800; }
@@ -86,19 +89,41 @@
         .campaign-logos span { font-size: 2rem; color: #ddd; font-weight: 100; }
         .ms-campaign-text { font-size: 1.1rem; line-height: 1.9; color: #444; max-width: 900px; margin: 0 auto; text-align: center; }
 
+        /* 하단 푸터 액션 */
         .footer-action { text-align: center; padding: 80px 0; }
         .btn-final { background: var(--ms-blue); color: white; text-decoration: none; padding: 22px 90px; font-size: 1.6rem; font-weight: bold; border-radius: 60px; transition: 0.3s; display: inline-block; box-shadow: 0 10px 25px rgba(0,120,212,0.3); }
 
         footer { background: #1a1a1a; color: #777; padding: 40px 8%; text-align: center; border-top: 5px solid var(--ms-blue); }
 
+        /* TOP 버튼 스타일 */
+        #topBtn {
+            display: none; 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            z-index: 99; 
+            border: none; 
+            outline: none; 
+            background-color: var(--ms-blue); 
+            color: white; 
+            cursor: pointer; 
+            padding: 15px 18px; 
+            border-radius: 50%; 
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        #topBtn:hover { background-color: var(--ms-dark); }
+
         @media (max-width: 1024px) { 
             .video-wrapper { width: 95%; }
             .process-flow, .level-grid, .jump-section { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
             header { padding: 10px 4%; }
+            nav a { margin-left: 15px; font-size: 0.9rem; }
         }
     </style>
 </head>
-<body>
+<body id="top">
 
 <header>
     <div class="logos">
@@ -107,6 +132,7 @@
         <img src="Microsoft-logo_rgb_c-gray.png" alt="Microsoft" class="ms-logo">
     </div>
     <nav>
+        <a href="#top">홈</a>
         <a href="#program">프로그램 소개</a>
         <a href="#jump">점프 소개</a>
         <a href="#campaign">캠페인 소개</a>
@@ -215,6 +241,27 @@
 <footer>
     <p>© 2026 사단법인 JUMP & Microsoft Korea. All rights reserved.</p>
 </footer>
+
+<button onclick="scrollToTop()" id="topBtn" title="위로 가기">▲</button>
+
+<script>
+    // 스크롤 시 TOP 버튼 표시 로직
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+        const topBtn = document.getElementById("topBtn");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    }
+
+    // 클릭 시 맨 위로 부드럽게 이동
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
 
 </body>
 </html>
