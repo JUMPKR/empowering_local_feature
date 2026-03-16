@@ -15,26 +15,23 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', 'Pretendard', sans-serif; margin: 0; color: var(--ms-dark); line-height: 1.7; word-break: keep-all; }
         
-        /* 헤더: 로고 순서 [점프 | MS] */
         header { display: flex; justify-content: space-between; align-items: center; padding: 10px 8%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logos { display: flex; align-items: center; gap: 20px; }
         .logos .jump-logo { height: 35px; width: auto; } 
         .logos .ms-logo { height: 100px; width: auto; }
         .logos span { color: #eee; font-size: 2.5rem; font-weight: 100; }
         
-        /* 메뉴 순서: 프로그램 - 점프 - 캠페인 */
         nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 600; font-size: 1rem; transition: 0.3s; }
         nav a:hover { color: var(--jump-sky); }
         .btn-query-nav { background: var(--ms-blue); color: white !important; padding: 10px 20px; border-radius: 4px; }
 
         section { padding: 80px 8%; }
         .section-title { text-align: center; margin-bottom: 40px; }
-        .section-title h2 { color: var(--jump-sky); font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+        .section-title h2 { color: var(--jump-sky); font-size: 2.3rem; margin-bottom: 10px; font-weight: 800; }
 
-        /* 비디오 컨테이너 */
+        /* 영상 영역: 링크드인 임베드 최적화 */
         .video-highlight { text-align: center; margin-bottom: 50px; }
-        .video-container { display: inline-block; max-width: 850px; width: 100%; box-shadow: 0 15px 40px rgba(0,0,0,0.15); border-radius: 12px; overflow: hidden; background: #000; }
-        video { width: 100%; display: block; }
+        .video-container { display: inline-block; width: 100%; max-width: 504px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); border-radius: 12px; overflow: hidden; background: #000; }
 
         .content-card { background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 35px; }
 
@@ -97,10 +94,7 @@
 
     <div class="video-highlight">
         <div class="video-container">
-            <video controls preload="metadata">
-                <source src="KakaoTalk_20260113_141614205.mp4" type="video/mp4">
-                브라우저가 동영상 재생을 지원하지 않습니다.
-            </video>
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7414537653037219840?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="활동 영상"></iframe>
         </div>
     </div>
 
@@ -169,10 +163,10 @@
     <div class="ms-campaign-box">
         <img src="Microsoft-logo_rgb_c-gray.png" alt="MS Logo">
         <div class="ms-campaign-text">
-            <p>마이크로소프트의 <strong>'Empowering Local Futures'</strong>는 전 세계 모든 지역 사회가 AI 시대를 주도할 수 있도록 기술 평등을 실현하는 사회공헌 비전입니다.</p>
-            <p>지리적·경제적 여건에 상관없이 모든 청소년이 최신 IT 기술에 접근하고 배울 수 있도록 교육 기회를 확대하는 것을 핵심 가치로 삼고 있습니다.</p>
+            <p>마이크로소프트의 <strong>'Empowering Local Futures'</strong>는 전 세계 모든 지역 사회가 AI 시대를 주도할 수 있도록 기술 평등을 실현하는 글로벌 비전입니다.</p>
+            <p>지리적·경제적 여건에 상관없이 모든 청소년이 최신 기술에 접근하고 배울 수 있도록 교육 기회를 확대하는 것을 핵심 가치로 삼고 있습니다.</p>
             <p>한국에서는 'Hour of AI' 프로그램을 통해 학생들에게 실질적인 AI 리터러시 경험을 제공하며 미래 인재로 성장하도록 지원합니다.</p>
-            <p>이는 단순한 기술 전수를 넘어 지역 사회의 지속 가능한 혁신과 성장을 견인하고자 하는 마이크로소프트의 글로벌 약속입니다.</p>
+            <p>이는 단순한 기술 전수를 넘어 지역 사회의 지속 가능한 혁신과 성장을 견인하고자 하는 마이크로소프트의 사회공헌 약속입니다.</p>
         </div>
     </div>
 </section>
