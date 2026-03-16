@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학교로 찾아가는 AI 교육 | JUMP x Microsoft</title>
+    <style>
+        :root {
+            --jump-sky: #26C1F0; 
+            --ms-blue: #0078D4;
+            --ms-dark: #2F2F2F;
+            --bg-light: #F4F7FA;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', 'Pretendard', sans-serif; margin: 0; color: var(--ms-dark); line-height: 1.7; word-break: keep-all; }
+        
+        /* 헤더: 로고 순서 [점프 | MS] */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 10px 8%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
+        .logos { display: flex; align-items: center; gap: 20px; }
+        .logos .jump-logo { height: 35px; width: auto; } 
+        .logos .ms-logo { height: 100px; width: auto; }
+        .logos span { color: #eee; font-size: 2.5rem; font-weight: 100; }
+        
+        /* 메뉴 순서: 프로그램 - 점프 - 캠페인 */
+        nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 600; font-size: 1rem; transition: 0.3s; }
+        nav a:hover { color: var(--jump-sky); }
+        .btn-query-nav { background: var(--ms-blue); color: white !important; padding: 10px 20px; border-radius: 4px; }
+
+        section { padding: 64px 8%; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: var(--jump-sky); font-size: 2.3rem; margin-bottom: 10px; font-weight: 800; }
+
+        /* 1. 프로그램 소개 (PPT 내용 반영) */
+        .intro-box { background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+        .intro-item { padding: 20px; border-radius: 12px; background: var(--bg-light); border-top: 4px solid var(--jump-sky); }
+        .intro-item h4 { margin-top: 0; color: var(--ms-blue); font-size: 1.2rem; }
+        
+        /* 영상 영역 */
+        .video-highlight { text-align: center; margin-bottom: 50px; }
+        .video-container { display: inline-block; max-width: 504px; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border-radius: 12px; overflow: hidden; }
+
+        /* 2. 점프 소개 */
+        .jump-section { background: var(--bg-light); border-radius: 40px; padding: 60px; display: flex; align-items: center; gap: 50px; margin-bottom: 64px; }
+        .jump-text h3 { color: var(--jump-sky); font-size: 1.8rem; margin-top: 0; }
+        .btn-jump { display: inline-block; margin-top: 20px; padding: 10px 25px; border: 2px solid var(--jump-sky); color: var(--jump-sky); text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; }
+        .btn-jump:hover { background: var(--jump-sky); color: #fff; }
+
+        /* 3. 캠페인 소개 */
+        .campaign-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .campaign-card { background: #fff; padding: 30px; border-radius: 15px; border: 1px solid #eee; text-align: center; }
+        .campaign-card h4 { color: var(--ms-blue); margin-top: 0; }
+
+        .footer-action { text-align: center; padding: 80px 0; background: #fff; }
+        .btn-final { background: var(--ms-blue); color: white; text-decoration: none; padding: 22px 70px; font-size: 1.6rem; font-weight: bold; border-radius: 60px; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,120,212,0.2); }
+        .btn-final:hover { transform: translateY(-5px); }
+
+        footer { background: #1a1a1a; color: #777; padding: 40px 8%; text-align: center; font-size: 0.9rem; }
+
+        @media (max-width: 1024px) { 
+            .intro-grid, .jump-section, .campaign-grid { grid-template-columns: 1fr; flex-direction: column; }
+            .logos .ms-logo { height: 70px; }
+            header { padding: 15px 4%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logos">
+        <img src="로고_점프.png" alt="JUMP Logo" class="jump-logo">
+        <span>|</span>
+        <img src="Microsoft-logo_rgb_c-gray.png" alt="Microsoft" class="ms-logo">
+    </div>
+    <nav>
+        <a href="#program">프로그램 소개</a>
+        <a href="#jump">점프 소개</a>
+        <a href="#campaign">캠페인 소개</a>
+        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=iEfFynd1v0-_BkhvAwfSlwhrDQ7fuJxOlmaJIu4ZgPlURTJZTk82Q0lBVzc4VFpSQlczNEhWQlM5Qy4u" target="_blank" class="btn-query-nav">교육 문의</a>
+    </nav>
+</header>
+
+<section id="program">
+    <div class="section-title">
+        <h2>학교로 찾아가는 AI 교육 프로그램</h2>
+        <p>Hour of AI X Empowering Local Futures</p>
+    </div>
+
+    <div class="video-highlight">
+        <div class="video-container">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7414537653037219840?collapsed=1" height="542" width="504" frameborder="0" allowfullscreen="" title="현장 영상"></iframe>
+        </div>
+    </div>
+
+    <div class="intro-box">
+        <p style="font-size: 1.2rem; text-align: center; font-weight: 600; color: #444;">“초·중·고 학생들이 AI 개념을 쉽고 재미있게 이해할 수 있도록 <br>게임형 학습 콘텐츠를 활용한 통합형 AI 배움 경험을 제공합니다.”</p>
+        
+        <div class="intro-grid">
+            <div class="intro-item">
+                <h4>교육 대상 및 방식</h4>
+                <p>전국 초·중·고등학교 재학생을 대상으로 대학생 퍼실리테이터와 마이크로소프트 임직원 멘토가 직접 학교로 방문하여 학급 단위 교육을 진행합니다.</p>
+            </div>
+            <div class="intro-item">
+                <h4>교육 성과</h4>
+                <p>학교 현장 중심의 민관협력 AI 교육 모델을 구축하였으며, 참여자 <b>교육 만족도 92.3%</b>, <b>재참여 희망 100%</b>라는 놀라운 성과를 기록하고 있습니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="jump">
+    <div class="jump-section">
+        <img src="로고_점프.png" alt="JUMP Logo">
+        <div class="jump-text">
+            <h3>사단법인 점프 (JUMP)</h3>
+            <p>점프는 누구나 공정한 교육의 기회를 누리는 세상을 꿈꾸는 교육 격차 해소 전문 비영리 단체입니다. <br>전국의 우수한 대학생 멘토들을 선발·교육하여 학교 현장에 수준 높은 AI 교육 퍼실리테이터를 파견하고 있습니다.</p>
+            <a href="https://jumpsp.org/" target="_blank" class="btn-jump">점프 홈페이지 방문하기</a>
+        </div>
+    </div>
+</section>
+
+<section id="campaign">
+    <div class="section-title">
+        <h2>Global Campaign</h2>
+    </div>
+    <div class="campaign-grid">
+        <div class="campaign-card">
+            <h4>Global Vision</h4>
+            <p>디지털 격차 해소를 위한 마이크로소프트의 전 세계적 리터러시 보급 사업</p>
+        </div>
+        <div class="campaign-card">
+            <h4>Local Impact</h4>
+            <p>대한민국 각 지역의 특성에 맞춘 단계별 AI 교육 프로그램 제공</p>
+        </div>
+        <div class="campaign-card">
+            <h4>Future Ready</h4>
+            <p>미래 세대가 AI 기술을 올바르고 책임감 있게 활용하도록 지원</p>
+        </div>
+    </div>
+</section>
+
+<div class="footer-action">
+    <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=iEfFynd1v0-_BkhvAwfSlwhrDQ7fuJxOlmaJIu4ZgPlURTJZTk82Q0lBVzc4VFpSQlczNEhWQlM5Qy4u" target="_blank" class="btn-final">교육 문의 및 신청하기</a>
+</div>
+
+<footer>
+    <p>© 2026 JUMP & Microsoft Korea. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
